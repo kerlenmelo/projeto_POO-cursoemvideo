@@ -16,33 +16,55 @@ public class Video implements AcoesVideo {
     public String getTitulo() {
         return titulo;
     }
+    
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
+    
     public int getAvaliacao() {
         return avaliacao;
     }
+    
     public void setAvaliacao(int avaliacao) {
-        this.avaliacao = avaliacao;
+        int nova;
+        if (this.getViews() > 1) {
+            nova = (int) (this.getAvaliacao() + avaliacao) / this.getViews();
+            this.avaliacao = nova;
+        } else if(this.getViews() == 1) {
+            this.avaliacao = (this.avaliacao + avaliacao);
+        }
     }
+    
     public int getViews() {
         return views;
     }
+    
     public void setViews(int views) {
         this.views = views;
     }
+    
     public int getCurtidas() {
         return curtidas;
     }
+    
     public void setCurtidas(int curtidas) {
         this.curtidas = curtidas;
     }
-    public boolean isReproduzindo() {
+    
+    public boolean getReproduzindo() {
         return reproduzindo;
     }
+    
     public void setReproduzindo(boolean reproduzindo) {
         this.reproduzindo = reproduzindo;
     }
+    
+    @Override
+    public String toString() {
+        return "Título: " + this.titulo + "\nAvaliacao: " + this.avaliacao + "\nViews: " + this.views 
+        + "\nCurtidas: " + this.curtidas + "\nReproduzindo: " + this.reproduzindo + "\n";
+    }
+
     @Override
     public void play() {
         
@@ -52,7 +74,7 @@ public class Video implements AcoesVideo {
         
     }
     @Override
-    public void live() {
+    public void like() {
         
     }
     
