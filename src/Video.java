@@ -37,12 +37,19 @@ public class Video implements AcoesVideo {
     public void setCurtidas(int curtidas) {
         this.curtidas = curtidas;
     }
-    public boolean isReproduzindo() {
+    public boolean getReproduzindo() {
         return reproduzindo;
     }
     public void setReproduzindo(boolean reproduzindo) {
         this.reproduzindo = reproduzindo;
     }
+    
+    @Override
+    public String toString() {
+        return "Título: " + this.titulo + "\nAvaliacao: " + this.avaliacao + "\nViews: " + this.views 
+        + "\nCurtidas: " + this.curtidas + "\nReproduzindo: " + this.reproduzindo + "\n";
+    }
+
     @Override
     public void play() {
         
