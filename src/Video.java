@@ -52,7 +52,7 @@ public class Video implements AcoesVideo {
         
     }
     @Override
-    public void live() {
+    public void like() {
         
     }
     
