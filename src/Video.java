@@ -67,15 +67,15 @@ public class Video implements AcoesVideo {
 
     @Override
     public void play() {
-        
+        this.setReproduzindo(true);
     }
     @Override
     public void pause() {
-        
+        this.setReproduzindo(false);
     }
     @Override
     public void like() {
-        
+        this.setCurtidas(this.getCurtidas() + 1);
     }
     
 }
